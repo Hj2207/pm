@@ -1,8 +1,18 @@
 var lastClicked;
 var grid = clickableGridFirst(1,10,function(el,i){
+        if(el.className==='clicked'){
+            console.log('exit form');
+            el.className=' ';
+        }
+        else{
+
+            console.log('booking form');
+            document.location.href = './booking.html';
+               el.className='clicked';
+        }
         console.log("You clicked on item #:",i);
 
-         el.className='clicked';
+      
      
 });
 
@@ -99,9 +109,6 @@ function clickableGridThird( rows, cols, callback ){
     }
     return grid;
 }
-
-
-
 
 
 
